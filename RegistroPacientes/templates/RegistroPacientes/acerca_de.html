@@ -1,0 +1,27 @@
+{% extends "template_base.html" %}
+
+{% load static %}
+{% block title_page %} <title>Acerca de</title>{% endblock title_page %}
+{% block inicio %}
+<div class="inicio-content">
+    <h1>Acerca De: </h1>
+        <h2>Jordán Espinoza</h2>
+        <p>Soy un diseñador con 10 años de experiencia que vive en chile y trabajo para una empresa de Estados Unidos y en estos momentos me encuentro buscando un cambio de aires en mi profesion ya que el diseño no me atrae de la misma manera por ende el desarrollo de aplicaciones o la programacion en si me atrapo, aunque me es muy complejo, pero por suerte estamos en una epoca donde existen muchas herramientas para solventar las falencias que uno pueda tener. Por eso decidi estudiar y lanzarme a ver que podia pasar, hasta el momento lo he encontrado genial me ha gustado mucho sobre todo lo de la logica y backend, el frontend ya lo encuentro muy aburrido, pero con chatgpt lo complemento y me divierto mucho.</p>
+
+        <p>Mi intencion es poder trabajar en una empresa de desarrollo de aplicaciones, ya que me gustaria aprender de los mejores y poder aportar en lo que pueda, tambien me gustaria poder trabajar en una empresa que me permita trabajar de manera remota, ya que me gusta mucho la idea de poder trabajar desde cualquier lugar del mundo, ya que me gusta mucho viajar y conocer nuevas culturas.</p>
+
+        <p>Otra opcion seria poder mantener mi trabajo como diseñador y poder trabajar como desarrollador de aplicaciones de manera freelance, ya que me gusta mucho la idea de poder trabajar en proyectos que me gusten y que me permitan aprender cosas nuevas.</p>
+
+        <p>A futuro me gustaria aprender mas sobre la programacion orientada objetos en C# para poder desarrollar videojuegos pero solo de manera personal, solo de pasatiempo. Mi meta profesional seria seguir en coderhouse con la carrera completa de desarrollo Backend(Aunque no me acuerdo mucho de javascrips y sql), python siempre mucho mucho mas que todo el resto de los lenguajes.</p>
+
+        <p>Como punto final mis hobbies favoritos son el futbol(jugarlo, ya que no soy de ningun equipo, en mi casa eran todo pecho frio), los videojuegos, lectura de manga, la cerveza(aunque no se si sea un pasatiempo o un problema de adiccion, el tiempo lo dira).</p>
+            <div class="imagenes-container-acerca">
+                <img src="{% static 'assets/img/asta.png' %}" alt="Asta">
+                <img src="{% static 'assets/img/cr7.png' %}" alt="CR7">
+                <img src="{% static 'assets/img/kratos.png' %}" alt="Kratos">
+                <img src="{% static 'assets/img/cerveza.png' %}" alt="Cerveza">
+            </div>
+    </div>
+
+    
+{% endblock inicio %}

@@ -1,0 +1,31 @@
+{% extends "template_base.html" %}
+
+{% block title_page %} <title>Agendar Cita</title>{% endblock title_page %}
+
+{% block inicio %}
+    <div class="content">
+        <h1 class="text-center">Agendar Cita</h1>
+
+        <!-- Mostrar mensajes de error si existen -->
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <!-- Formulario de registro -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-4">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ formulario.as_p }}
+                        </div>
+                        <button class="btn btn-primary btn-block mt-3" type="submit">Agendar Cita</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock inicio %}

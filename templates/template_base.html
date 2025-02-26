@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title_page %} <title>Clinica Privada</title>{% endblock title_page %}
+    
+    <!-- Solo carga la versión de Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+
+    <!-- Navbar -->
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Información de contacto alineada a la izquierda -->
+            <div class="contact-info d-flex align-items-center">
+                <img src="{% static 'assets/img/vara.png' %}" alt="Logo" class="logo" style="width: 30px; height: auto;">
+                <h3 class="m-0 ml-3 text-white">Clinica Privada: Dr. Casa</h3>
+            </div>
+            
+            <!-- Botón para pantallas pequeñas (móvil) - menú hamburguesa -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "agendar_cita" %}">Agendar Hora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listado_de_pacientes' %}">Listado de Pacientes</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                             <div class="large-arrow">↓</div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'registro_paciente' %}">Registro de Paciente</a>
+                            <a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a>
+                            <a class="dropdown-item" href="{% url 'registro_usuario' %}">Registrarse</a>
+                            <a class="dropdown-item" href="{% url "perfil" %}">Perfil</a>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a>
+                            <a class="dropdown-item" href="{% url "acerca_de" %}">Acerca de</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock navbar %}
+
+    <!-- Contenido Principal -->
+    <div class="container mt-4">
+        {% block inicio %}
+            <div class="parrafo text-center">
+                <h2 class="titulo-parrafo">Bienvenido a la Clínica Privada</h2>
+                <p>Servicios médicos de calidad a tu disposición.</p>
+            </div>
+        {% endblock inicio %}
+    </div>
+    
+    {% block autentificador %}
+    {% if user.is_authenticated %}
+        <div class="floating-box">
+            {% if user.perfil.avatar %}
+                <!-- Si el usuario tiene un avatar, lo mostramos -->
+                <img src="{{ user.perfil.avatar_url }}" alt="Avatar de {{ user.username }}">
+            {% else %}
+                <!-- Si el usuario no tiene un avatar, mostramos la imagen por defecto -->
+                <img src="{{ user.perfil.avatar_url }}" alt="Avatar por defecto" class="avatar">
+            {% endif %}
+            <p>¡Hola, {{ user.username }}! <br> Estás conectado.</p>
+    </div>       
+    {% endif %}
+{% endblock autentificador %}
+
+
+    <!-- Footer -->
+    {% block footer %}
+    <footer class="text-center mt-5 p-3 bg-light">
+        <p>© 2025 - Clínica Privada - Dr. Casa | Contacto: (2) 22 64 900 574</p>
+    </footer>
+    {% endblock footer %}
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Esperar a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el elemento del dropdown
+            const dropdownToggle = document.getElementById('navbarDropdown');
+            const dropdownMenu = dropdownToggle.nextElementSibling;
+    
+            // Agregar un listener de click al botón del dropdown
+            dropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevenir la acción por defecto del enlace
+                // Alternar la visibilidad del menú desplegable
+                dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+            });
+    
+            // Cerrar el menú si se hace clic fuera del menú
+            document.addEventListener('click', function (e) {
+                if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html>

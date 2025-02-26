@@ -1,0 +1,20 @@
+{% extends "template_base.html" %}
+{% block title_page %} <title>Editar Paciente</title>{% endblock title_page %}
+{% block inicio %}
+    <div class="content">
+        <h1 class="text-center">Editar Paciente</h1>
+
+        <!--Formulario de Edición-->
+        <div class="d-flex justify-content-center">
+            <div class="form-container"> <!-- Contenedor con los mismos estilos que el de registro -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.as_p }}
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock inicio %}

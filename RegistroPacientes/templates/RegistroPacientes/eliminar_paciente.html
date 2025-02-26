@@ -1,0 +1,24 @@
+{% extends "template_base.html" %}
+
+
+{% block title_page %} <title>Eliminar Paciente</title>{% endblock title_page %}
+
+{% block inicio %}
+    <div class="content">
+        <h1 class="text-center">Eliminar Paciente</h1>
+
+        <!-- Confirmación de eliminación -->
+        <div class="text-center">
+            <h2>¿Estás seguro de que deseas eliminar a {{ object.nombre }}?</h2>
+
+            <form method="post">
+                {% csrf_token %}
+                <!-- Botón de confirmación con estilo -->
+                <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+            </form>
+
+            <!-- Enlace para cancelar la acción, redirigiendo al listado de pacientes -->
+            <a href="{% url 'listado_de_pacientes' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </div>
+{% endblock inicio %}

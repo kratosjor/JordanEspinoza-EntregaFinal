@@ -1,0 +1,31 @@
+{% extends "template_base.html" %}
+
+{% load static %}
+{% block title_page %} <title>Inicio</title>{% endblock title_page %}
+{% block inicio %} 
+<div class="links-container">
+        <div class="left-side">
+            <h3>Pacientes</h3>
+            <a href="{% url 'agendar_cita' %}">Ir a Agendar Cita</a>
+        </div>
+    
+        <div class="right-side">
+            <h3>Doctores</h3>
+            <a href="{% url 'registro_paciente' %}">Ir a Registro Pacientes</a>
+        </div>
+    </div>
+    <div class="inicio-content">
+        
+            <H2>Dr. Gregorio Casa</H2>
+            <p>Dr. Gregorio Casa es un médico destacado por su enfoque analítico y su capacidad excepcional para resolver diagnósticos complejos. Dirige un equipo de diagnóstico en su clínica privada, donde se dedica a investigar y tratar casos médicos complicados.</p> 
+            <p><strong>Especialidades:</strong></p> 
+            <ul> 
+                <li><strong>Infectología:</strong> Posee una vasta experiencia en el tratamiento de enfermedades infecciosas, desde las más comunes hasta aquellas de difícil diagnóstico.</li> <li><strong>Nefrología:</strong> Especialista en el tratamiento de enfermedades renales, brindando atención a pacientes con afecciones renales agudas y crónicas.</li> </ul> <p><strong>Métodos de trabajo:</strong></p> 
+                <p>El Dr. Casa es conocido por su enfoque poco convencional en la medicina. A menudo cuestiona los tratamientos estándar y busca alternativas que muchos consideran no tradicionales, pero que él considera cruciales para avanzar en el diagnóstico. Si bien utiliza terapias alternativas en ciertos casos, siempre prioriza una evaluación rigurosa y científica antes de tomar decisiones. Es extremadamente racional y meticuloso en su análisis, pero a veces se muestra reacio a aceptar protocolos médicos que considera inflexibles o desactualizados.</p> 
+                <p><strong>Relación con los pacientes:</strong></p> 
+                <p>Su actitud es directa, en ocasiones fría, y puede parecer distante, lo que lo hace difícil de tratar para algunos pacientes. Prefiere enfocarse en el diagnóstico y tratamiento de las enfermedades en lugar de en la relación emocional con los pacientes. Si bien no es conocido por su empatía, los pacientes que logran conectarse con él aprecian su enfoque pragmático y su capacidad para resolver casos difíciles.</p> 
+                <p><strong>Personalidad:</strong></p> 
+                <p>El Dr. Casa tiene una personalidad irónica y es conocido por su sarcasmo. Es un médico que desafía constantemente las normas establecidas y busca soluciones fuera del convencionalismo. Si bien puede ser difícil de tratar debido a su actitud distante y su falta de interés en la interacción social, su competencia y habilidades clínicas lo han hecho muy respetado en su campo. El Dr. Casa también enfrenta un dolor crónico en su pierna como consecuencia de un infarto pasado, lo que ha llevado a una dependencia de analgésicos como la vicodina. Este aspecto de su vida, aunque personal, no interfiere con su dedicación al diagnóstico y tratamiento de sus pacientes.</p>
+        </div>
+        
+{% endblock inicio %}  

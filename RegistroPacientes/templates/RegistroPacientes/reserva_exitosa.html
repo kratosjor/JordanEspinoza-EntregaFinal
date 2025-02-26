@@ -1,0 +1,19 @@
+
+
+{% extends "template_base.html" %}
+
+
+{% block title_page %} <title>Reserva Exitosa!</title>{% endblock title_page %}
+
+{% block inicio %}
+    <div class="content">
+        <h1>su reserva fue agendada con exito!</h1>
+        <div>
+            <p>
+                Su reverva quedo agenda para el dia <strong>{{cita.fecha}} a las {{cita.hora_cita}}.</strong>
+            </p>
+        </div>
+
+<a href="{% url "inicio" %}">Volver a Inicio</a>
+    </div>
+{% endblock inicio %}

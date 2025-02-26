@@ -1,0 +1,60 @@
+# Proyecto curso 75135
+
+# Proyecto Clinica Privada
+## Entrega Final - Jordán Espinoza
+
+## Descripción
+
+Esta aplicación web en Django permite gestionar el registro de pacientes en una clínica privada. Los doctores pueden ingresar los datos de los 
+pacientes como nombre, dirección, teléfono, receta, etc. Además, la aplicación permite ver el listado de pacientes y editar sus datos.
+Tambien los pacientes desde la misma pagina pueden agendar horas desde los dias lunes a sabado desde las 8:00 hasta las 19:00, siendo las 18:30, la ultima hora posible de agendar.
+
+**Características:**
+- Agendar Cita
+- Registro de pacientes.
+- Listado de pacientes.
+- Edición de los datos de los pacientes.
+- Iniciar Sesion
+- Cerrar Sesion
+- Registrarse
+- Acceso a Perfil
+- Editar Perfil
+- Acerca de
+
+## Requisitos
+
+Este proyecto usa Python y Django, entre otras dependencias. Asegúrate de tener lo siguiente antes de empezar:
+
+asgiref==3.8.1
+Django==5.1.6
+pillow==11.1.0
+sqlparse==0.5.3
+tzdata==2025.1
+
+## Instalación
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/kratosjor/EntregaFinal-JordanEspinoza.git
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
+La aplicación funciona con entorno virtual .venv
+
+## Uso
+
+1. **Agendar Cita** El paciente debe agendar su hora(no es necesario logearse).
+2. **Iniciar Sesion** El doctor para poder realizar cualquier tipo de atencion debe logearse para poder acceder al sistema.
+3. **Registro de paciente** El doctor con debe elegir la cita y debe ir a Registrar un paciente, completa el formulario y guarda el paciente.
+4. **Ver pacientes**: Ve al "Listado de Pacientes", donde podrás ver todos los pacientes registrados.
+5. **Editar paciente**: Puedes editar los detalles de cualquier paciente desde el listado.
+6. ** Perfil** El doctor aca podra completar tu perfil con informacion personal, fecha de nacimiento, su biografia asi como tambien su especialidad, ademas de poder elegir una foto de perfil.
+7. ** Cambiar Contraseña** Dentro de perfil tambien existe la opcion de cambiar la Contraseña.
+8. **Acerca de** Este apartado tiene un poco de informacion personal sobre el creador de la aplicacion web.
+9. **Recuperar Contraseña**
+
+
+
+
+

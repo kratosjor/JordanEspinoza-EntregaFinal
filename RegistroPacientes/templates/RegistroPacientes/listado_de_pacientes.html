@@ -1,0 +1,54 @@
+{% extends "template_base.html" %}
+
+{% block title_page %} <title>Listado de Pacientes</title>{% endblock title_page %}
+
+{% block inicio %}
+
+    <div class="content-tabla">
+        <h1>Listado de Pacientes</h1>
+        <form action="">
+            
+            {{ formulario }}
+            
+            <input type="submit" value="Buscar">
+            <a href="{% url 'listado_de_pacientes' %}" class="btn btn-secondary">Limpiar Filtros</a>
+        </form>
+
+        {% if pacientes %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                        <th>Diagnostico</th>
+                        <th>Receta</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for paciente in pacientes %}
+                    <tr>
+                        <td>{{ paciente.nombre }}</td>
+                        <td>{{ paciente.edad }}</td>
+                        <td>{{ paciente.direccion }}</td>
+                        <td>{{ paciente.telefono }}</td>
+                        <td>{{ paciente.diagnostico }}</td>
+                        <td>{{ paciente.receta }}</td>
+                        
+                        <td>
+                            <a href="{% url 'editar_paciente' paciente.pk %}" class="edit-button">Editar</a>
+                            <a href="{% url 'eliminar_paciente' paciente.pk %}" class="edit-button">Eliminar</a>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No hay pacientes cargados</p>
+            <p>Consejo: Recuerda escribir correctamente el nombre a buscar</p>
+        {% endif %}
+    </div>
+    {% endblock inicio %}

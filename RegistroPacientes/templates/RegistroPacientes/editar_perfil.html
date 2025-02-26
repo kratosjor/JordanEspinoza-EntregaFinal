@@ -1,0 +1,32 @@
+{% extends 'template_base.html' %}
+
+{% block title_page %} <title>Editar Perfil</title>{% endblock title_page %}
+
+{% block inicio %}
+<div class="form-container">
+    <h2>Editar Perfil</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h3>Información Personal</h3>
+        {{ user_form.as_p }}
+
+        <h3>Información Adicional</h3>
+        {{ perfil_form.as_p }}
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+
+    <hr>
+
+    <h3>Cambiar Contraseña</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ password_form.as_p }}
+        <button type="submit">Actualizar Contraseña</button>
+    </form>
+
+    <a href="{% url 'perfil' %}">Volver al Perfil</a>
+</div>
+{% endblock %}

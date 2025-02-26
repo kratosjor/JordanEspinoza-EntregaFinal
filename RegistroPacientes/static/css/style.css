@@ -1,0 +1,586 @@
+/* ===== CONFIGURACIÓN GENERAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #e4f4ff, #c2e3e7, #b3cdfd, #71bfff);
+    background-size: 300% 300%;
+    animation: gradientAnimation 6s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.nav-item span.nav-link {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-left: 15px;
+    background-color: #343a40;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    background: linear-gradient(45deg, #333, #444, #555, #000);
+    background-size: 300% 300%;
+    animation: navbarAnimation 6s ease infinite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar h3 {
+    color: white;
+    margin: 0;
+    padding: 0 20px;
+    display: block;
+}
+
+.navbar .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .logo-container img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    text-align: right;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+@keyframes navbarAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilo para el dropdown */
+.navbar .dropdown-menu {
+    display: none; /* Se oculta por defecto */
+    position: absolute;
+    background: linear-gradient(45deg, #333, #444, #555, #000);
+    background-size: 300% 300%;
+    animation: navbarAnimation 6s ease infinite;
+    border-radius: 5px;
+    padding: 10px;
+    top: 50px;
+    right: 0;
+    z-index: 1000;
+    list-style: none;
+    min-width: 250px; /* Ajustado para mayor ancho */
+    transition: opacity 0.3s ease;
+}
+
+/* Estilos para los enlaces dentro del dropdown */
+.navbar .dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+/* Efecto hover en los enlaces */
+.navbar .dropdown-menu a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+/* Estilo para el contenedor del logo y el número de contacto */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Espacio entre el logo y el número */
+}
+
+/* Ajusta el tamaño del logo */
+.contact-info img {
+    height: 40px;
+    width: auto;
+}
+
+/* Estilo para el texto del contacto */
+.contact-info h3 {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== CONTENIDO GENERAL ===== */
+.content {
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ===== FORMULARIO ===== */
+.form-container {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* ===== ESTILOS PARA EL BLOQUE INICIO ===== */
+.inicio-content {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: justify;
+    backdrop-filter: blur(5px);
+    margin-top: 80px;
+    position: relative; /* Relativo para que los elementos absolutos se posicionen dentro */
+}
+
+/* Estilos para el contenedor de enlaces */
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px; /* Ajuste de espacio entre el contenido y los enlaces */
+    position: relative; /* Asegura que se mantengan dentro del contenedor */
+    z-index: 1; /* Asegura que el contenedor de enlaces esté por encima del contenido */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    padding: 0 20px; /* Ajusta los márgenes laterales para evitar que los enlaces se desborden */
+    margin-top: 90px;
+    text-align: center;
+}
+
+.left-side, .right-side {
+    width: 48%; /* Ajusta el ancho para que no se desborden y estén bien alineados */
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+}
+
+.left-side h3, .right-side h3 {
+    margin-bottom: 10px; /* Espacio debajo de los encabezados */
+}
+
+.left-side a, .right-side a {
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.left-side a:hover, .right-side a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===== TABLA DE PACIENTES ===== */
+.content-tabla form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra el contenido */
+    margin-bottom: 20px;
+}
+
+.content-tabla {
+    width: 100%;
+    margin: 100px auto 20px;
+    font-family: Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Habilitar desplazamiento horizontal si es necesario */
+}
+
+.content-tabla h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f5f5f5;
+    
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #666;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover {
+    background-color: #bbb;
+}
+
+.edit-button {
+    display: inline-block;
+    padding: 5px 10px 10px 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.edit-button:hover {
+    background-color: #222;
+}
+
+input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #444;
+}
+
+/* Ajuste del tamaño del input de búsqueda */
+.content-tabla input[type="text"] {
+    padding: 12px 20px;  /* Aumenta el tamaño del padding para más espacio dentro del campo */
+    width: 300px;  /* Aumenta el ancho del input */
+    font-size: 16px;  /* Aumenta el tamaño de la fuente */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px; /* Espacio entre input y botón */
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    opacity: 50%;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===== EDITAR PACIENTE ===== */
+.container-editar-paciente .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Ajusta el alto de la vista */
+    text-align: center;
+}
+
+.container-editar-paciente .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 300px; /* Ajusta el ancho del formulario */
+}
+
+.container-editar-paciente .formulario input[type="submit"],
+.container-editar-paciente .formulario a {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.container-editar-paciente .formulario a {
+    margin-top: 10px;
+}
+
+.container-editar-paciente .formulario input[type="submit"]:hover,
+.container-editar-paciente .formulario a:hover {
+    background-color: #555;
+}
+
+.container-editar-paciente h1 {
+    font-size: 28px;
+    color: #06080a;
+    margin-bottom: 10px;
+}
+
+.container-editar-paciente h2 {
+    font-size: 22px;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.floating-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #aecce0, #c2e3e7, #b3cdfd, #89b3d4);  /* Fondo con gradiente */
+    color: rgb(0, 0, 0);             /* Texto en blanco para mejor visibilidad */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: gradientAnimation 6s ease infinite;
+    font-size: 16px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Asegúrate de que el fondo del gradiente esté con un tamaño grande para que la animación se note */
+.floating-box {
+    background-size: 400% 400%;  /* Aumentamos el tamaño para notar el movimiento */
+}
+.large-arrow {
+    font-size: 15px;  /* Tamaño grande */
+    color: #ffffff;       /* Color de la flecha */
+    display: block;    /* Asegura que la flecha sea un bloque */
+    text-align: center; /* Centrado de la flecha */
+    transform: scaleX(250%);
+
+}
+
+/* ===== PERFIL ===== */
+.perfil-container {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.perfil-container h2 {
+    font-size: 26px;
+    color: #06080a;
+    margin-bottom: 20px;
+}
+
+.perfil-container img {
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.perfil-container p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.perfil-container a {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.perfil-container a:hover {
+    background: #0056b3;
+}
+
+/* ===== FORMULARIO DE EDICIÓN ===== */
+.form-container {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-top: 100px;
+}
+
+.form-container h3 {
+    font-size: 20px;
+    color: #06080a;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+/*saludo al usuario*/
+/* ===== FLOATING BOX ===== */
+.floating-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: gradientAnimation 6s ease infinite;
+    font-size: 18px;
+    background: linear-gradient(45deg, #aecce0, #c2e3e7, #b3cdfd, #71bfff);
+    background-size: 400% 400%;
+    max-width: 200px; /* Limitar el ancho máximo del contenedor */
+    max-height: 250px; /* Limitar el alto máximo del contenedor */
+    overflow: hidden; /* Asegura que nada se desborde fuera del contenedor */
+}
+
+.floating-box img {
+    max-width: 100px;  /* Limita el ancho máximo de la imagen */
+    max-height: 100px; /* Limita la altura máxima de la imagen */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover;  /* Asegura que la imagen se recorte proporcionalmente */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Avatar */
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px;
+}
+/*ACERCA DE*/
+
+.imagenes-container-acerca {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre imágenes */
+    margin-top: 80px;
+}
+
+.imagenes-container-acerca img {
+    width: 200px; /* Tamaño similar para cada imagen */
+    height: 200px; /* Establece una altura fija para que tengan tamaños parecidos */
+    object-fit: cover; /* Ajusta la imagen sin distorsionar, recortando si es necesario */
+    border-radius: 10px; /* Bordes redondeados (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}

@@ -1,0 +1,14 @@
+{% extends "template_base.html" %}
+
+
+{% block title_page %} <title>Registro de Usuario</title>{% endblock title_page %}
+
+{% block inicio %}
+<div class="content">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+    </form>
+</div>
+{% endblock inicio %}

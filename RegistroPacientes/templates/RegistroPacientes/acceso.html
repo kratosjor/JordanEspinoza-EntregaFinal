@@ -1,0 +1,9 @@
+{% extends "template_base.html" %}
+{% block title_page %} <title>Acceso</title>{% endblock title_page %}
+{% block inicio %}
+  <div class="content">
+    <h2>Acceso restringido</h2>
+    <p>Si no tienes cuenta, puedes <a href="{% url 'registro_usuario' %}">Registrarte</a>.</p>
+    <p>Si ya tienes cuenta, puedes <a href="{% url 'login' %}">Iniciar Sesión</a>.</p>
+  </div>
+{% endblock %}
